@@ -14,11 +14,11 @@ namespace SmartBuyAPI.Models
         public DateTime DateLastEdit { get; set; }
         [Required(ErrorMessage = "Please enter category name."), StringLength(255)]
         public string Name { get; set; }
-        public int Priority { get; set; }
-        [Required]
-        [DisplayName("Display Order")]
-        [Range(1, int.MaxValue, ErrorMessage = "Order must be more then 0")]
-        public int DisplayOrder { get; set; }
+        //public int Priority { get; set; }
+        //[Required]
+        //[DisplayName("Display Order")]
+        //[Range(1, int.MaxValue, ErrorMessage = "Order must be more then 0")]
+        //public int DisplayOrder { get; set; }
         [StringLength(4000)]
         public string Description { get; set; }
         [StringLength(255)]

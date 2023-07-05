@@ -62,8 +62,6 @@ namespace SmartBuyBackend.Migrations
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateLastEdit = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Priority = table.Column<int>(type: "int", nullable: false),
-                    DisplayOrder = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: false),
                     Image = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
@@ -207,16 +205,16 @@ namespace SmartBuyBackend.Migrations
 
             migrationBuilder.InsertData(
                 table: "tbl_Categories",
-                columns: new[] { "Id", "DateCreated", "DateLastEdit", "Description", "DisplayOrder", "Image", "IsDelete", "Name", "Priority" },
+                columns: new[] { "Id", "DateCreated", "DateLastEdit", "Description", "Image", "IsDelete", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(724), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Комп'ютери та ноутбуки", 1 },
-                    { 2, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(819), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Смартфони", 1 },
-                    { 3, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(826), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Побутова техніка", 1 },
-                    { 4, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(831), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Дача, сад, город", 1 },
-                    { 5, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(835), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Спорт і захоплення", 1 },
-                    { 6, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(849), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", 10, "1.jpg", false, "Офіс, школа, книги", 1 },
-                    { 7, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(854), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description test", 10, "1.jpg", false, "test", 1 }
+                    { 1, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(7960), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Комп'ютери та ноутбуки" },
+                    { 2, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8054), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Смартфони" },
+                    { 3, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8059), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Побутова техніка" },
+                    { 4, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8064), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Дача, сад, город" },
+                    { 5, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8068), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Спорт і захоплення" },
+                    { 6, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8076), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description", "1.jpg", false, "Офіс, школа, книги" },
+                    { 7, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8080), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "description test", "1.jpg", false, "test" }
                 });
 
             migrationBuilder.InsertData(
@@ -224,12 +222,12 @@ namespace SmartBuyBackend.Migrations
                 columns: new[] { "Id", "CategoryId", "DateCreated", "DateLastEdit", "Description", "Image", "IsDelete", "Name", "Price", "ShortDescription" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(987), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "test", "1.jpg", false, "ПК Х123434", 436765, "figna" },
-                    { 2, 2, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(997), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ми представляємо вам найпотужнішу, саму оснащену, ударотривкий та найефективнішу версію смартфона 2021 року від румунської компанії iHunt .", "1.jpg", false, "iHunt Titan P13000 PRO 2021", 13940, "figna" },
-                    { 3, 3, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1002), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Холодильники з системою NeoFrost ", "1.jpg", false, "BEKO CNA295K20XP", 10999, "figna" },
-                    { 4, 4, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1007), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ланцюгова пила Bosch UniversalChain ", "1.jpg", false, "Bosch UniversalChain 40", 3958, "figna" },
-                    { 5, 5, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1012), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Велосипед Champion Spark 29 ", "1.jpg", false, "Champion Spark 29 19.5 Black-neon yellow-white", 5460, "figna" },
-                    { 6, 6, new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1017), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "ВНабір паперу офісного Zoom Stora Enso А4 80 г/м2 клас С + 5 пачок по 500 аркушів Біла ", "1.jpg", false, "Zoom Stora Enso А4 80 г/м2 клас С + 5 пачок по 500 аркушів Біла", 1199, "figna" }
+                    { 1, 1, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8202), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "test", "1.jpg", false, "ПК Х123434", 436765, "figna" },
+                    { 2, 2, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8213), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ми представляємо вам найпотужнішу, саму оснащену, ударотривкий та найефективнішу версію смартфона 2021 року від румунської компанії iHunt .", "1.jpg", false, "iHunt Titan P13000 PRO 2021", 13940, "figna" },
+                    { 3, 3, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8218), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Холодильники з системою NeoFrost ", "1.jpg", false, "BEKO CNA295K20XP", 10999, "figna" },
+                    { 4, 4, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8223), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ланцюгова пила Bosch UniversalChain ", "1.jpg", false, "Bosch UniversalChain 40", 3958, "figna" },
+                    { 5, 5, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8228), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Велосипед Champion Spark 29 ", "1.jpg", false, "Champion Spark 29 19.5 Black-neon yellow-white", 5460, "figna" },
+                    { 6, 6, new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8233), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "ВНабір паперу офісного Zoom Stora Enso А4 80 г/м2 клас С + 5 пачок по 500 аркушів Біла ", "1.jpg", false, "Zoom Stora Enso А4 80 г/м2 клас С + 5 пачок по 500 аркушів Біла", 1199, "figna" }
                 });
 
             migrationBuilder.CreateIndex(

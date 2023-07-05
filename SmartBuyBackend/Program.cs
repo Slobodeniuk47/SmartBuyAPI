@@ -18,14 +18,22 @@ options.UseSqlServer(connectionString)); //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿
 builder.Services.AddAutoMapper(typeof(AppMapProfile));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors();
 
 var app = builder.Build();
+app.UseCors(conf =>
+    conf.AllowAnyHeader()
+        .AllowAnyMethod()
+        .WithOrigins("http://localhost:3000"));
+//.AllowAnyOrigin());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseDeveloperExceptionPage();
 }
 var dir = Path.Combine(Directory.GetCurrentDirectory(), "Images");
 if (!Directory.Exists(dir))

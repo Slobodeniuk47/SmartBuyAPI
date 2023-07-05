@@ -54,10 +54,11 @@ namespace SmartBuyAPI.Controllers
         /// <param name="model">Категория</param>
         /// <returns></returns>
         [HttpPost("create")]
-        public async Task<ActionResult<IEnumerable<CategoryCreateDTO>>> Create([FromBody] CategoryCreateDTO model)
+        public async Task<ActionResult<IEnumerable<CategoryCreateDTO>>> Create([FromForm] CategoryCreateDTO model)
         {
             var category = _mapper.Map<CategoryEntity>(model); // CategoryEntity update CategoryCreateDTO
 
+            //category.IsDelete = false;
             category.DateCreated = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
             category.Image = ImageHelper.SaveAndGetImageName(model.Image, _iconfiguration);
 
@@ -76,13 +77,13 @@ namespace SmartBuyAPI.Controllers
             ImageHelper.DeleteImage(category.Image);
 
             category.Name = model.Name;
-            category.DisplayOrder = model.DisplayOrder;
+            //category.DisplayOrder = model.DisplayOrder;
             category.DateLastEdit = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
 
             string imageNewName = ImageHelper.SaveAndGetImageName(model.ImageUpload, _iconfiguration);
             category.Image = string.IsNullOrEmpty(imageNewName) ? category.Image : imageNewName;
 
-            category.Priority = model.Priority;
+            //category.Priority = model.Priority;
             category.Description = model.Description;
 
             await _context.SaveChangesAsync();
@@ -96,7 +97,6 @@ namespace SmartBuyAPI.Controllers
             if (category == null)
                 return NotFound();
 
-            //var imageOld = category.Image;
             ImageHelper.DeleteImage(category.Image);
             
             _context.Categories.Remove(category);

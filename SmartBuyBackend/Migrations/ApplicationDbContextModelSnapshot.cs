@@ -239,9 +239,6 @@ namespace SmartBuyBackend.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("nvarchar(4000)");
 
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -255,9 +252,6 @@ namespace SmartBuyBackend.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("Priority")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("tbl_Categories");
@@ -266,86 +260,72 @@ namespace SmartBuyBackend.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(724),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(7960),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Комп'ютери та ноутбуки",
-                            Priority = 1
+                            Name = "Комп'ютери та ноутбуки"
                         },
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(819),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8054),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Смартфони",
-                            Priority = 1
+                            Name = "Смартфони"
                         },
                         new
                         {
                             Id = 3,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(826),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8059),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Побутова техніка",
-                            Priority = 1
+                            Name = "Побутова техніка"
                         },
                         new
                         {
                             Id = 4,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(831),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8064),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Дача, сад, город",
-                            Priority = 1
+                            Name = "Дача, сад, город"
                         },
                         new
                         {
                             Id = 5,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(835),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8068),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Спорт і захоплення",
-                            Priority = 1
+                            Name = "Спорт і захоплення"
                         },
                         new
                         {
                             Id = 6,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(849),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8076),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "Офіс, школа, книги",
-                            Priority = 1
+                            Name = "Офіс, школа, книги"
                         },
                         new
                         {
                             Id = 7,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(854),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8080),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "description test",
-                            DisplayOrder = 10,
                             Image = "1.jpg",
                             IsDelete = false,
-                            Name = "test",
-                            Priority = 1
+                            Name = "test"
                         });
                 });
 
@@ -404,7 +384,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(987),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8202),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "test",
                             Image = "1.jpg",
@@ -417,7 +397,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(997),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8213),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ми представляємо вам найпотужнішу, саму оснащену, ударотривкий та найефективнішу версію смартфона 2021 року від румунської компанії iHunt .",
                             Image = "1.jpg",
@@ -430,7 +410,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 3,
                             CategoryId = 3,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1002),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8218),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Холодильники з системою NeoFrost ",
                             Image = "1.jpg",
@@ -443,7 +423,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 4,
                             CategoryId = 4,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1007),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8223),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ланцюгова пила Bosch UniversalChain ",
                             Image = "1.jpg",
@@ -456,7 +436,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 5,
                             CategoryId = 5,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1012),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8228),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Велосипед Champion Spark 29 ",
                             Image = "1.jpg",
@@ -469,7 +449,7 @@ namespace SmartBuyBackend.Migrations
                         {
                             Id = 6,
                             CategoryId = 6,
-                            DateCreated = new DateTime(2023, 7, 3, 10, 56, 50, 184, DateTimeKind.Utc).AddTicks(1017),
+                            DateCreated = new DateTime(2023, 7, 5, 0, 7, 16, 16, DateTimeKind.Utc).AddTicks(8233),
                             DateLastEdit = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "ВНабір паперу офісного Zoom Stora Enso А4 80 г/м2 клас С + 5 пачок по 500 аркушів Біла ",
                             Image = "1.jpg",
